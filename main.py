@@ -158,13 +158,15 @@ def main():
     args = parser.parse_args()
 
     # default values
-    K_COLLECTION_DIR = "./data/colectie/"
-    K_HORIZONTAL = 20
+    K_COLLECTION_DIR = "./data/automobile/"
+    K_HORIZONTAL = 30
     K_RANDOM_PLACE = False
     K_GRID_ALLOW_DUPLICATES = False
     K_HEXAGONAL = True
 
-    generate(args.target, K_COLLECTION_DIR, K_HORIZONTAL, K_RANDOM_PLACE, K_GRID_ALLOW_DUPLICATES, K_HEXAGONAL)
+    ld = generate(args.target, K_COLLECTION_DIR, K_HORIZONTAL, K_RANDOM_PLACE, K_GRID_ALLOW_DUPLICATES, K_HEXAGONAL)
+    img = Image.frombytes("RGB", (ld.shape[1], ld.shape[0]), ld)
+    img.show()
 
 # Usage: $ python3 main.py ./data/imaginiTest/ferrari.jpeg
 
