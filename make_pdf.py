@@ -26,13 +26,12 @@ def add_picture_to_canvas(data, desc, c):
     c.showPage()
 
 def imgresize(target):
-    LIMIT = 500
+    LIMIT = 600
     (big_w, big_h) = target.shape[0:2]
     return misc.imresize(target, (LIMIT, int(big_h/big_w * LIMIT)))
 
 def cerinta(imagelist, idx, comment, genfunc, c):
-    # sizes = [50, 25, 50, 100, 75, 100]
-    sizes = [10, 10, 10, 10, 10, 10]
+    sizes = [50, 25, 50, 100, 75, 100]
     num = 0
     for imgpath in imagelist:
         print(imgpath)
@@ -118,7 +117,7 @@ def main():
 
     c.save()
 
-# Usage: $ python3 make_pdf.py aici.pdf && open aici.pdf
+# Usage: $ python3 make_pdf.py pdf_name.pdf && open pdf_name.pdf
 
 if __name__ == '__main__':
     sys.exit(main())
